@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="ListViewItem" x:Key="FriendListStyle">
+        <Setter Property="Background" Value="#991EB5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Border CornerRadius="10"
+                            Background="{TemplateBinding Background}"
+                            Margin="10,10,10,0"
+                            Height="70"
+                            >
+                        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                            <Ellipse Width="45" Height="45">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding Photo}"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <StackPanel>
+                                <Label Content="{Binding FirstName}"
+                                    FontWeight="Bold"
+                                       FontSize="15"
+                                       Foreground="White"
+                                       />
+                                <Label Content="{Binding LastMessage}"
+                                       FontSize="10"
+                                       FontWeight="Normal"
+                                       Foreground="White"
+                                    />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#CA05F7"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

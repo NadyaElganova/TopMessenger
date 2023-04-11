@@ -1,0 +1,61 @@
+﻿<Window x:Class="TopMessenger.Views.AddFriendWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TopMessenger.Views"
+        xmlns:vm="clr-namespace:TopMessenger.ViewModels"
+        
+        mc:Ignorable="d"
+        Title="AddFriendWindow" Height="450" Width="800"
+        AllowsTransparency="False"
+        WindowStyle="None"
+        >
+    <Window.DataContext>
+        <vm:AddFriendViewModel x:Name="AddFriendViewModel"></vm:AddFriendViewModel>
+    </Window.DataContext>
+    
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Style="{StaticResource BorderTopWindow}">
+            <Grid HorizontalAlignment="Stretch"
+                  Background="#CD85DE"
+                  >
+                <Label Content="Top messenger"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       />
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal"
+                            Height="30" VerticalAlignment="Top">
+                    <Button Style="{StaticResource CloseButton}"
+                            Command="{Binding CloseWindowCommand}">                        
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Application">
+                <MenuItem>
+                    
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <StackPanel>
+                <Button Margin="50" Style="{StaticResource AddFriendBtn}">
+                  
+                </Button>
+                <ListView Width="360" Height="250"
+                          Background="LightCyan"
+                          ItemContainerStyle="{StaticResource UsersListViewItem}"
+                          ItemsSource="{Binding AllUsers}"
+                          >
+                                        
+                </ListView>
+            </StackPanel>
+        </Grid>
+        
+        
+    </DockPanel>
+</Window>

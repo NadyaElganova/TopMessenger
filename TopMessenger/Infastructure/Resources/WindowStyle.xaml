@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:fa="http://schemas.fontawesome.io/icons/"
+                    >
+    <DataTemplate x:Key="WindowBorder" DataType="{x:Type Border}">
+        <Border DockPanel.Dock="Top">
+            <Grid HorizontalAlignment="Stretch"
+                  Background="#CD85DE"
+                  >
+                <Label Content="Top messenger"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       />
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal"
+                            Height="30" VerticalAlignment="Top">
+                    <Button Width="25" Height="20"
+                            Background="Transparent" 
+                            Margin="0,0,10,0"
+                            Command="{Binding WindowMinimizeCommand, ElementName=MainVM}"
+                            >
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <fa:ImageAwesome Icon="WindowMinimize"
+                                                 Foreground="Purple">
+                                </fa:ImageAwesome>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Width="25"
+                            Background="Transparent"
+                            Margin="0,0,10,0"
+                            Command="{Binding WindowMaximizeCommand, ElementName=MainVM}"
+                            >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <fa:ImageAwesome Icon="WindowMaximize"
+                                                 Foreground="Purple">
+                                </fa:ImageAwesome>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Width="25"
+                            Background="Transparent" 
+                            Command="{Binding AppCloseCommand, ElementName=MainVW}"
+                            >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <fa:ImageAwesome Icon="WindowCloseOutline"
+                                                 Foreground="Purple">
+                                </fa:ImageAwesome>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

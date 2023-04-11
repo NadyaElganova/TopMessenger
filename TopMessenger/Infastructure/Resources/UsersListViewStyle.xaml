@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/"                    
+                    >
+    <Style TargetType="ListViewItem" x:Key="UsersListViewItem">
+        <Setter Property="Background" Value="#F5F4A3"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Border CornerRadius="10"
+                            Margin="10"
+                            Height="70"
+                            Background="{TemplateBinding Background}"                         
+                            
+                            >
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Height="40" Width="40"
+                                     Margin="10,0,0,0">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Photo}"></ImageBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <TextBlock FontWeight="Bold"
+                                       FontSize="20"
+                                       Foreground="White"
+                                       >
+
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" {0} {1} ">
+                                            <Binding Path="FirstName"></Binding>
+                                            <Binding Path="LastName"></Binding>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button>
+                                    <Button.Style>
+                                        <Style BasedOn="{StaticResource ResourceKey=AddFriendBtn}" TargetType="Button">
+                                            <Setter Property="Command" Value="{Binding AddFriendCommand, ElementName=AddFriendViewModel}">
+
+                                            </Setter>
+                                            <Setter Property="Margin" Value="0,0,10,0">
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>                                
+                            </StackPanel>
+                        </Grid>
+                        
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>            
+        </Setter>
+        
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#B64DF6">                    
+                </Setter>
+            </Trigger>    
+        </Style.Triggers>
+        
+    </Style>
+</ResourceDictionary>
