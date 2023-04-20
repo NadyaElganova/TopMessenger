@@ -5,10 +5,10 @@
     <Style TargetType="Border" x:Key="BorderTopWindow">
         <Setter Property="Background" Value="#CD85DE"></Setter>
     </Style>
-
-    <Style TargetType="Button">
+    <Style TargetType="Button" x:Key="CloseButton">
         <Setter Property="Width" Value="20"></Setter>
         <Setter Property="Height" Value="20"></Setter>
+        <Setter Property="Margin" Value="0,0,10,0"></Setter>
         <Setter Property="Foreground" Value="Black"></Setter>
         <Setter Property="Template">
             <Setter.Value>
@@ -19,5 +19,38 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style> 
+    
+    <Style TargetType="Button" x:Key="MinimazedButton">
+        <Setter Property="Width" Value="20"></Setter>
+        <Setter Property="Height" Value="20"></Setter>
+        <Setter Property="Margin" Value="0,0,10,0"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <fa:ImageAwesome Icon="WindowMinimize"
+                                     Foreground="White">
+                    </fa:ImageAwesome>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
+    
+    <Style TargetType="Button" x:Key="MaximizedButton">
+        <Setter Property="Width" Value="20"></Setter>
+        <Setter Property="Height" Value="20"></Setter>
+        <Setter Property="Margin" Value="0,0,10,0"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <fa:ImageAwesome Icon="WindowMaximize"
+                                     Foreground="White">
+                    </fa:ImageAwesome>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
