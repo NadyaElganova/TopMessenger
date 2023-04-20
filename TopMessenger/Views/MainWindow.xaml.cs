@@ -52,7 +52,7 @@ namespace TopMessenger.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new AddFriendWindow().ShowDialog();
+            new AuthorizationWindow().ShowDialog();
         }
     }
 }

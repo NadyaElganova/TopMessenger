@@ -46,13 +46,18 @@
                 <Button Margin="50" Style="{StaticResource AddFriendBtn}">
                   
                 </Button>
-                <ListView Width="360" Height="250"
+                <ListView Width="360" Height="200"
                           Background="LightCyan"
                           ItemContainerStyle="{StaticResource UsersListViewItem}"
                           ItemsSource="{Binding AllUsers}"
                           >
                                         
                 </ListView>
+
+                <Button Width="360" Height="50"
+                        Style="{StaticResource GradientBtn}"
+                        >                    
+                </Button>
             </StackPanel>
         </Grid>
         
