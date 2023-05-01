@@ -13,7 +13,8 @@
                 <ResourceDictionary Source="Infastructure/Resources/TopBorderButtonStyle.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Infastructure/Resources/AddFriendBtmStyle.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Infastructure/Resources/UsersListViewStyle.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="Infastructure/Resources/GradientBtnStyle.xaml"></ResourceDictionary>                
+                <ResourceDictionary Source="Infastructure/Resources/GradientBtnStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Infastructure/Resources/GradientStackPanelStyle.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>            
         </ResourceDictionary>
     </Application.Resources>

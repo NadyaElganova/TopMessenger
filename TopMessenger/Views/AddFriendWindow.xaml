@@ -55,8 +55,7 @@
                 </ListView>
 
                 <Button Width="360" Height="50"
-                        Style="{StaticResource GradientBtn}"
-                        >                    
+                        Style="{StaticResource GradientBtn}">                    
                 </Button>
             </StackPanel>
         </Grid>

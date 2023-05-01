@@ -23,5 +23,6 @@ namespace TopMessenger.Views
         {
             InitializeComponent();
         }
+
     }
 }

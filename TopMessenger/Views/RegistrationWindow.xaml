@@ -6,12 +6,14 @@
         xmlns:local="clr-namespace:TopMessenger.Views"
         xmlns:vm="clr-namespace:TopMessenger.ViewModels"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="800" Width="800"
+        Title="RegistrationWindow" Height="650" Width="800"
         WindowStyle="None"
         >
+    
     <Window.DataContext>
-        <vm:RegistrationViewModel></vm:RegistrationViewModel>
+        <vm:RegistrationViewModel x:Name="RegistrationViewModel"></vm:RegistrationViewModel>
     </Window.DataContext>
+
     <DockPanel>
         <Border DockPanel.Dock="Top" Style="{StaticResource BorderTopWindow}">
             <Grid HorizontalAlignment="Stretch"
@@ -31,6 +33,7 @@
                 </StackPanel>
             </Grid>
         </Border>
+
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Application">
                 <MenuItem>
@@ -41,56 +44,62 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <StackPanel>
-            <TextBox Margin="15" Text="{Binding FirstName}"></TextBox>
-            <Label Margin="10" Content="Имя введено неккоректно" 
+        
+        <Grid>
+            <Button Style="{StaticResource ButtonStyle2}" Panel.ZIndex="0"/>
+            <StackPanel Panel.ZIndex="1">
+                <TextBox Margin="15" Text="{Binding FirstName}"></TextBox>
+                <Label Margin="10" Content="Имя введено неккоректно" 
                    Foreground="Red"
                    HorizontalAlignment="Center"
                    >
-                <Label.Style>
-                    <Style TargetType="Label">
-                        <Setter Property="Visibility" Value="Collapsed" />
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsFirstNameValid}" Value="False">
-                                <Setter Property="Visibility" Value="Visible" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
+                    <Label.Style>
+                        <Style TargetType="Label">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsFirstNameValid}" Value="False">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
 
-                </Label.Style>
-            </Label>
+                    </Label.Style>
+                </Label>
 
-            <TextBox Margin="15" Text="{Binding Email}"></TextBox>
-            <Label Margin="10" Content="Емейл не верный"  Foreground="Red"
+                <TextBox Margin="15" Text="{Binding Email}"></TextBox>
+                <Label Margin="10" Content="Емейл не верный"  Foreground="Red"
                    HorizontalAlignment="Center">
-                <Label.Style>
-                    <Style TargetType="Label">
-                        <Setter Property="Visibility" Value="Collapsed" />
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsEmailValid}" Value="False">
-                                <Setter Property="Visibility" Value="Visible" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
+                    <Label.Style>
+                        <Style TargetType="Label">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEmailValid}" Value="False">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
 
-                </Label.Style>
-            </Label>
+                    </Label.Style>
+                </Label>
 
-            <TextBox Margin="15"></TextBox>
-            <Label Margin="10"></Label>
+                <TextBox Margin="15"></TextBox>
+                <Label Margin="10"></Label>
 
-            <TextBox Margin="15"></TextBox>
-            <Label Margin="10"></Label>
+                <TextBox Margin="15"></TextBox>
+                <Label Margin="10"></Label>
 
-            <TextBox Margin="15"></TextBox>
-            <Label Margin="10"></Label>
+                <TextBox Margin="15"></TextBox>
+                <Label Margin="10"></Label>
 
-            <TextBox Margin="15"></TextBox>
-            <Label Margin="10"></Label>
+                <TextBox Margin="15"></TextBox>
+                <Label Margin="10"></Label>
 
-            <Button Width="150" Height="50"
+                <Button Width="150" Height="50"
                     Command="{Binding RegistrationCommand}"
                     >Register</Button>
-        </StackPanel>
+
+            </StackPanel>
+        </Grid>
+
     </DockPanel>
 </Window>

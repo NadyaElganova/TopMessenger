@@ -17,7 +17,7 @@
     <Window.DataContext>
         <vm:MainViewModel x:Name="MainVM"></vm:MainViewModel>
     </Window.DataContext>
-    <DockPanel >
+    <DockPanel>
         <ContentControl DockPanel.Dock="Top"
                         ContentTemplate="{StaticResource WindowBorder}"/>
 

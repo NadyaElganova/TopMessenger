@@ -46,13 +46,13 @@ namespace TopMessenger.Views
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                DragMove();
+                //DragMove();
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new AuthorizationWindow().ShowDialog();
+            new RegistrationWindow().ShowDialog();
         }
     }
 }
